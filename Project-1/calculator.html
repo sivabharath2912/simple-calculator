@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: rgb(204, 200, 200);
+    }
+
+    .totaldiv{
+      background-color: rgb(255, 255, 255);
+      max-width: 265px;
+      height: 399px;
+      border-radius: 15px;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      position: absolute;
+      top: 300px;
+      left: 300px;
+      box-shadow:5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .buttons{
+      max-width: 250px;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      grid-row-gap:10px;
+      grid-column-gap:0px;
+      margin-left: 10px;
+    }
+
+    input{
+      background-color:gray ;
+      max-width: 261px;
+      margin-bottom: 20px;
+      height: 50px;
+      border: none;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size:25px;
+    }
+
+    .btn{
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: none;
+      background-color:rgb(207, 25, 25) ;
+      color: azure;
+      font-size: 25px;
+    }
+
+    .btn:hover{
+      background-color:rgb(148, 31, 31);
+    }
+  </style>
+</head>
+<body>
+  <div class="totaldiv">
+    <input id="display" type="text">
+
+    <div class="buttons">
+      <button class="btn" onclick="allclear('AC')">AC</button>
+      <button class="btn" onclick="singleclear('C')">C</button>
+      <button class="btn" onclick="todisplay('%')">%</button>
+      <button class="btn" onclick="todisplay('/')">/</button>
+      <button class="btn" onclick="todisplay('7')">7</button>
+      <button class="btn" onclick="todisplay('8')">8</button>
+      <button class="btn" onclick="todisplay('9')">9</button>
+      <button class="btn" onclick="todisplay('*')">*</button>
+      <button class="btn" onclick="todisplay('4')">4</button>
+      <button class="btn" onclick="todisplay('5')">5</button>
+      <button class="btn" onclick="todisplay('6')">6</button>
+      <button class="btn" onclick="todisplay('-')">-</button>
+      <button class="btn" onclick="todisplay('1')">1</button>
+      <button class="btn" onclick="todisplay('2')">2</button>
+      <button class="btn" onclick="todisplay('3')">3</button>
+      <button class="btn" onclick="todisplay('+')">+</button>
+      <button class="btn" onclick="todisplay('0')">0</button>
+      <button class="btn" onclick="todisplay('00')">00</button>
+      <button class="btn" onclick="todisplay('.')">.</button>
+      <button class="btn" onclick="calculate('=')">=</button>
+    </div>
+  </div>
+
+  <script>
+    let display=document.getElementById("display")
+
+    function todisplay(input){
+      display.value+=input;
+    }
+
+    function allclear(){
+      display.value="";
+    }
+
+    function singleclear(){
+      display.value=display.value.slice(0,-1);
+    }
+
+    function calculate(){
+      try{
+        display.value=eval(display.value);
+      }
+
+      catch(error){
+        display.value="Error";
+      }
+
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
